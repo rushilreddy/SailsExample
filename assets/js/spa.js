@@ -8,7 +8,7 @@ angular.module('Platzi').controller('BaseCtrl', ['$scope', '$http', function ($s
         $scope.$apply();
     });
 
-    io.socket.on('/emoji', function(evemt){
+    io.socket.on('emoji', function NewEvent(event){
         switch(event.verb) {
             case 'created':
                 $scope.emojis.push(event.data);
